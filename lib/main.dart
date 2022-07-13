@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart' as firebase_core;
-import 'package:practice_project/video/vudei_play_.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:practice_project/button_desable_and_Enable/desable_and_Enable.dart';
 
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+   MobileAds.instance.initialize();
   await firebase_core.Firebase.initializeApp();
+
 
   runApp(const MyApp());
 }
@@ -18,10 +21,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: VideoPlayerApp(),
+      home:enable_desable(),
     );
   }
 }
